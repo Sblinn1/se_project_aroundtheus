@@ -74,7 +74,7 @@
   margin-right: 24px;
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 620px) {
   .profile {
     display: flex;
     flex-direction: column;
@@ -98,7 +98,6 @@
     font-weight: 500;
     line-height: 26px;
     padding-top: 40px;
-    height: 22px;
     align-self: center;
   }
 
@@ -116,7 +115,9 @@
     width: 18px;
     height: 18px;
     border: solid 1px white;
-    margin-top: 50px;
+    margin-top: 45px;
+    margin-left: 15px;
+    margin-right: 0;
   }
 
   .profile__add-button {
@@ -131,6 +132,6 @@
 
 @media screen and (max-width: 800px) {
   .profile__title {
-    font-size: 30px;
+    font-size: 22px;
     line-height: 26px;
   }
