@@ -17,6 +17,7 @@
   grid-gap: 20px 17px;
   padding: 0;
   margin: 0;
+  justify-content: center;
 }
 
 .card__image {
@@ -56,8 +57,8 @@
 }
 
 .card__like-button {
-  background: transparent url("../images/like-icon.svg") center no-repeat;
-  width: 21px;
+  background: transparent url("../images/Vector\ \(4\).svg") center no-repeat;
+  width: 23px;
   height: 18px;
   border-style: none;
 }

@@ -2,3 +2,13 @@
   margin-top: 45px;
   border-bottom: 1px solid rgba(84, 84, 84, 0.7);
 }
+
+.header__image {
+  padding-bottom: 40px;
+}
+
+@media screen and (max-width: 640px) {
+  .header__image {
+    margin-left: 27px;
+  }
+}
