@@ -18,6 +18,10 @@
   line-height: 48px;
   grid-area: "title";
   margin: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 375px;
 }
 
 .profile__description {
@@ -39,6 +43,7 @@
   align-self: center;
   margin-left: 25px;
   margin-top: 7px;
+  margin-right: 20px;
 }
 
 .profile__edit-button:hover {
@@ -104,14 +109,14 @@
     font-size: 14px;
     font-weight: 400;
     line-height: 17px;
-    margin: 20px;
+    margin-top: 25px;
   }
 
   .profile__edit-button {
     width: 18px;
     height: 18px;
     border: solid 1px white;
-    margin-top: 45px;
+    margin-top: 50px;
   }
 
   .profile__add-button {
@@ -123,3 +128,9 @@
     border: solid 2px #ffffff;
   }
 }
+
+@media screen and (max-width: 800px) {
+  .profile__title {
+    font-size: 30px;
+    line-height: 26px;
+  }
