@@ -8,7 +8,6 @@
 .profile__info {
   display: grid;
   grid-template-areas: "title button" "description description";
-  grid-template-columns: minmax(373px) auto;
 }
 
 .profile__title {
@@ -16,7 +15,6 @@
   font-weight: 500;
   font-size: 42px;
   line-height: 48px;
-  grid-area: "title";
   margin: 0;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -29,7 +27,6 @@
   font-size: 18px;
   line-height: 22px;
   font-weight: 400;
-  grid-area: "description";
   margin-top: 10px;
 }
 
@@ -37,7 +34,6 @@
   background: transparent url("../images/Vector\ \(3\).svg") center no-repeat;
   height: 24px;
   width: 24px;
-  grid-area: "button";
   border: 1px solid;
   border-color: white;
   align-self: center;
