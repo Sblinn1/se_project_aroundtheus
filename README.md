@@ -6,7 +6,7 @@ Project 3, Around The U.S, is a webpage with a few different sections. We have a
   
 **Intro**
   
-This project tested my ability to be able to make a webpage responsive. This means that the webpage will look differently across different screensizes. I was able to make a layout for a larger desktop window, a tablet size, and a phone size. So, the layout of the website on a phone screen looks much different then it does on my laptop screen. To be able to achieve this, I had to use media queries. Media queries allow you to apply different properties to certain elements at different resolutions. To figure out how it was supposed to look at each size, I used figma. The figma layout gave me all the images I needed, all the fonts, all the sizes, and all the positioning that was needed to achieve this. Below are some screenshots of how the pages looks across different screen sizes. 
+This project tested my ability to be able to make a webpage responsive. This means that the webpage will look differently across different screensizes. I was able to make a layout for a larger desktop window, a tablet size, and a phone size. So, the layout of the website on a phone screen looks much different then it does on my laptop screen. To be able to achieve this, I had to use media queries. Media queries allow you to apply different properties to certain elements at different resolutions. To figure out how it was supposed to look at each size, I used figma. The figma layout gave me all the images I needed, all the fonts, all the sizes, and all the positioning that was needed to achieve this. Below are some screenshots of how the pages looks across different screen sizes starting with the 1280px, followed by 800px, and finished off with 320px.
   
 **Figma**  
   
