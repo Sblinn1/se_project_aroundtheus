@@ -14,6 +14,5 @@ This project tested my ability to be able to make a webpage responsive. This mea
   
 **Images**  
   
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
-  
-Good luck and have fun!
+<img width="1440" alt="Screenshot 2024-05-28 at 10 59 09 AM" src="https://github.com/Sblinn1/se_project_aroundtheus/assets/166926899/bf68c9f2-8000-45e0-b9fd-53b0ff8d3f1e">
+
