@@ -2,13 +2,11 @@
 
 ### Overview  
 
-* Intro  
-* Figma  
-* Images  
+Project 3, Around The U.S, is a webpage with a few different sections. We have a header, a profile, a cards section, and a footer. The header has the title image, the profile has our explorer, the cards have the photos of the different places around the U.S, and the footer has our copyright. 
   
 **Intro**
   
-This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones.  
+This project tested my ability to be able to make a webpage responsive. This means that the webpage will look differently across different screensizes. I was able to make a layout for a larger desktop window, a tablet size, and a phone size. So, the layout of the website on a phone screen looks much different then it does on my laptop screen. To be able to achieve this, I had to use media queries. Media queries allow you to apply different properties to certain elements at different resolutions.
   
 **Figma**  
   
