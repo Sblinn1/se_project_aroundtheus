@@ -7,7 +7,7 @@
   padding-bottom: 41px;
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 620px) {
   .header__image {
     margin-left: 27px;
     margin-top: 28px;
