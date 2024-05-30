@@ -30,6 +30,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  max-width: 415px;
 }
 
 .profile__edit-button {
@@ -75,7 +76,7 @@
   background-position: center;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 820px) {
   .profile__title {
     font-size: 22px;
     line-height: 26px;
