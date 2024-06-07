@@ -61,11 +61,6 @@ function getCardElement(cardData) {
   }
 }
 
-initialCards.forEach((cardData) => {
-  const cardElement = getCardElement(cardData);
-  cardListEl.append(cardElement);
-});
-
 // Event Handlers //
 
 function handleProfileEditSubmit(e) {
@@ -90,5 +85,6 @@ modalCloseButton.addEventListener("click", closePopUp);
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 
 initialCards.forEach((cardData) => {
-  const cardElement = createCard(cardData);
+  const cardElement = getCardElement(cardData);
+  cardListEl.append(cardElement);
 });
