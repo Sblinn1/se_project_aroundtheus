@@ -2,7 +2,7 @@
 
 ### Overview  
 
-Project 3, Around The U.S, is a webpage with a few different sections. We have a header, a profile, a cards section, and a footer. The header has the title image, the profile has our explorer, the cards have the photos of the different places around the U.S, and the footer has our copyright. 
+Project 3, Around The U.S, is a webpage with a few different sections. We have a header, a profile, a cards section, and a footer. The header has the title image, the profile has our explorer, the cards have the photos of the different places around the U.S, and the footer has our copyright. The edit button in the profile is active and users can change the profile title and description.
 
 Link to website: https://sblinn1.github.io/se_project_aroundtheus/
 
