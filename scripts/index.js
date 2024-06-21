@@ -47,7 +47,6 @@ const addNewCardButton = document.querySelector(".profile__add-button");
 const addCardModal = document.querySelector("#add-card-modal");
 const addCardModalCloseButton = addCardModal.querySelector(".modal__close");
 const addCardFormElement = addCardModal.querySelector(".modal__form");
-
 const cardTitleInput = addCardFormElement.querySelector(
   ".modal__input_type_title"
 );
@@ -76,6 +75,13 @@ function getCardElement(cardData) {
   cardImage.src = cardData.link;
   cardImage.alt = cardData.name;
   cardTitle.textContent = cardData.name;
+
+  const likeButtons = cardElement.querySelectorAll(".card__like-button");
+  likeButtons.forEach((likeButton) => {
+    likeButton.addEventListener("click", () => {
+      likeButton.classList.toggle("card__like-button_active");
+    });
+  });
 
   return cardElement;
 }
