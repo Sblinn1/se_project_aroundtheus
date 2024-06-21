@@ -62,24 +62,27 @@ function closeModal(modal) {
   modal.classList.remove("modal_opened");
 }
 
-// function openModal(modal) {
-//   profileAddModal.classList.add("modal_opened");
-// }
-
 function getCardElement(cardData) {
   const cardTemplate = document.querySelector("#card-template").content;
   const cardElement = cardTemplate.cloneNode(true);
   const cardImage = cardElement.querySelector(".card__image");
   const cardTitle = cardElement.querySelector(".card__title");
+  const likeButton = cardElement.querySelectorAll(".card__like-button");
+  const deleteButton = cardElement.querySelectorAll(".card__delete-button");
 
   cardImage.src = cardData.link;
   cardImage.alt = cardData.name;
   cardTitle.textContent = cardData.name;
 
-  const likeButtons = cardElement.querySelectorAll(".card__like-button");
-  likeButtons.forEach((likeButton) => {
+  likeButton.forEach((likeButton) => {
     likeButton.addEventListener("click", () => {
       likeButton.classList.toggle("card__like-button_active");
+    });
+  });
+
+  deleteButton.forEach((deleteButton) => {
+    deleteButton.addEventListener("click", (evt) => {
+      evt.target.closest(".card").remove();
     });
   });
 
