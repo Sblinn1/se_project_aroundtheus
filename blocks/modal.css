@@ -5,16 +5,24 @@
   bottom: 0;
   right: 0;
   z-index: 999;
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 50%);
   padding: 0 19px;
   width: 100%;
+  visibility: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: visibility 0s 0.5s, opacity 0.5s linear;
 }
 
 .modal_opened {
   display: flex;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: all;
+  transition: visibility 0s, opacity 0.5s linear;
 }
 
 .modal__container {

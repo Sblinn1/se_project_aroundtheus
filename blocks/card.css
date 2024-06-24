@@ -12,6 +12,10 @@
   border-top-right-radius: 10px;
 }
 
+.card__image:hover {
+  cursor: pointer;
+}
+
 .card__title {
   font-weight: 900;
   font-size: 24px;
