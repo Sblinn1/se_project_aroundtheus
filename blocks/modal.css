@@ -117,10 +117,6 @@
 }
 
 @media screen and (max-width: 560px) {
-  .modal {
-    padding: 0 19px;
-  }
-
   .modal__container {
     padding: 25px;
     max-width: 282px;
@@ -152,5 +148,11 @@
   .modal__close_type_preview {
     height: 30px;
     width: 30px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .modal {
+    width: 282px;
   }
 }
