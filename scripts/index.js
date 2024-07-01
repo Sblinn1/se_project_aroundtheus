@@ -65,7 +65,7 @@ modals.forEach((modal) => {
 // Functions //
 function closeModalByPressingESC(evt) {
   if (evt.key === "Escape") {
-    const modal = document.querySelector(".modal__opened");
+    const modal = document.querySelector(".modal_opened");
     closeModal(modal);
   }
 }
