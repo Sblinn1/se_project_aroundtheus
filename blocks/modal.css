@@ -119,11 +119,11 @@
 
 .modal__error {
   font-size: 12px;
-  width: 164px;
   color: red;
   line-height: 14px;
   margin-top: 5px;
   margin-bottom: 13px;
+  width: 358px;
 }
 
 .modal__input_type_error {
