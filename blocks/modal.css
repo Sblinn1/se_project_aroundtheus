@@ -87,7 +87,6 @@
 }
 
 .modal__input {
-  margin-bottom: 30px;
   border-bottom: 1px solid rgba(0, 0, 0, 20%);
   border-top: none;
   border-left: none;
@@ -95,6 +94,7 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
+  padding-bottom: 13px;
 }
 
 .modal__container_type_image {
@@ -114,6 +114,19 @@
 .modal__preview_caption {
   position: absolute;
   top: calc(100% + 10px);
+}
+
+.modal__error {
+  font-size: 12px;
+  width: 164px;
+  color: red;
+  line-height: 14px;
+  margin-top: 5px;
+  margin-bottom: 13px;
+}
+
+.modal__input_type_error {
+  border-color: red;
 }
 
 @media screen and (max-width: 560px) {
