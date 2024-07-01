@@ -95,6 +95,7 @@
   font-size: 14px;
   line-height: 17px;
   padding-bottom: 13px;
+  position: relative;
 }
 
 .modal__container_type_image {
@@ -129,6 +130,10 @@
   border-color: red;
 }
 
+.modal__button_disabled {
+  opacity: 20%;
+}
+
 @media screen and (max-width: 560px) {
   .modal__container {
     padding: 25px;
@@ -152,10 +157,6 @@
     margin-bottom: 75px;
     height: 22px;
     font-size: 18px;
-  }
-
-  .modal__input {
-    margin-bottom: 30px;
   }
 
   .modal__close_type_preview {

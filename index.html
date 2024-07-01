@@ -80,6 +80,10 @@
             name="title"
             placeholder="Title"
             class="modal__input modal__input_type_title"
+            id="add-card-form"
+            minlength="1"
+            maxlength="30"
+            required
           />
           <span class="modal__error" id="add-card-form-error"></span>
           <input
@@ -87,8 +91,10 @@
             name="url"
             placeholder="Image link"
             class="modal__input modal__input_type_url"
+            id="add-card-url"
+            required
           />
-          <span class="modal__error" id="add-card-form-error"></span>
+          <span class="modal__error" id="add-card-url-error"></span>
           <button class="button modal__button modal__button_dibaled" type="submit" disabled>Save</button>
         </form>
       </div>
