@@ -57,13 +57,33 @@ const previewModalCloseButton = previewModal.querySelector(
   "#modal-close-button"
 );
 
+const modals = [addCardModal, profileEditModal, previewModal];
+modals.forEach((modal) => {
+  modal.addEventListener("click", closeModalByOverlay);
+});
+
 // Functions //
+function closeModalByPressingESC(evt) {
+  if (evt.key === "Escape") {
+    const modal = document.querySelector(".modal__opened");
+    closeModal(modal);
+  }
+}
+
+function closeModalByOverlay(evt) {
+  if (evt.target.classList.contains("modal")) {
+    closeModal(evt.target);
+  }
+}
+
 function openModal(modal) {
   modal.classList.add("modal_opened");
+  document.addEventListener("keydown", closeModalByPressingESC);
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
+  document.removeEventListener("keydown", closeModalByPressingESC);
 }
 
 function getCardElement(cardData) {
