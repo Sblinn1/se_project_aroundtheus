@@ -152,16 +152,10 @@ addNewCardButton.addEventListener("click", () => {
   openModal(addCardModal);
 });
 
-profileCloseButton.addEventListener("click", () => {
-  closeModal(profileEditModal);
-});
-
-addCardModalCloseButton.addEventListener("click", () => {
-  closeModal(addCardModal);
-});
-
-previewModalCloseButton.addEventListener("click", () => {
-  closeModal(previewModal);
+const closeButtons = document.querySelectorAll(".modal__close");
+closeButtons.forEach((button) => {
+  const modal = button.closest(".modal");
+  button.addEventListener("click", () => closeModal(modal));
 });
 
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);

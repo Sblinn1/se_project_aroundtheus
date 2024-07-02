@@ -35,7 +35,7 @@ function toggleButtonState(inputEls, submitButton, { inactiveButtonClass }) {
 
 function setEventListenters(formEl, config) {
   const inputEls = [...formEl.querySelectorAll(config.inputSelector)];
-  const submitButton = formEl.querySelectorAll(config.submitButtonSelector);
+  const submitButton = formEl.querySelector(config.submitButtonSelector);
   inputEls.forEach((inputEl) => {
     inputEl.addEventListener("input", (e) => {
       checkInputValidity(formEl, inputEl, config);
