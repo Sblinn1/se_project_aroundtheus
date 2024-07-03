@@ -173,10 +173,11 @@
   .modal__error {
     max-width: 238px;
     position: absolute;
+    font-size: 10px;
   }
 
   .modal__input_type_title {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
   }
 
   .modal__error_type_title {
@@ -184,6 +185,6 @@
   }
 
   .modal__error_type_description {
-    margin-top: 110px;
+    margin-top: 100px;
   }
 }
