@@ -9,7 +9,7 @@
   align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 50%);
-  padding: 0 19px;
+  padding: 0;
   width: 100%;
   visibility: none;
   opacity: 0;
@@ -202,12 +202,11 @@
     padding-top: 25px;
     padding-right: 22px;
     padding-left: 22px;
-    height: 278px;
+    height: 272px;
   }
 
   .modal_opened {
-    padding-top: 22px;
-    margin-top: 128px;
+    padding-top: 128px;
   }
 
   .modal__input_type_title {
