@@ -155,7 +155,7 @@
   }
 
   .modal__heading {
-    margin-bottom: 76px;
+    margin-bottom: 75px;
     height: 22px;
     font-size: 18px;
   }
@@ -186,5 +186,39 @@
 
   .modal__error_type_description {
     margin-top: 100px;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .modal {
+    width: 282px;
+    height: 322px;
+    padding-top: 123px;
+    padding-left: 19px;
+    padding-right: 19px;
+  }
+
+  .modal__container {
+    padding-top: 25px;
+    padding-right: 22px;
+    padding-left: 22px;
+    height: 278px;
+  }
+
+  .modal_opened {
+    padding-top: 22px;
+    margin-top: 128px;
+  }
+
+  .modal__input_type_title {
+    margin-bottom: 30px;
+  }
+
+  .modal__error_type_description {
+    margin-top: 90px;
+  }
+
+  .modal__button {
+    margin-top: 48px;
   }
 }
