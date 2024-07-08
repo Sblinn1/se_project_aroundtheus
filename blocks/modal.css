@@ -219,5 +219,6 @@
 
   .modal__button {
     margin-top: 48px;
+    font-size: 14px;
   }
 }
