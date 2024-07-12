@@ -31,7 +31,6 @@ class Card {
     this._link = link;
     this._cardSelector = cardSelector;
     this._handlePreviewPicture = handlePreviewPicture;
-    console.log(this._handlePreviewPicture);
   }
 
   _setEventListeners() {
