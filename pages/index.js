@@ -117,6 +117,9 @@ const editFormvalidator = new FormValidator(
 );
 const addFormvalidator = new FormValidator(validationSettings, addFormElement);
 
+addFormvalidator.enableValidation(validationSettings);
+editFormvalidator.enableValidation(validationSettings);
+
 const handleLikeIcon = (evt) => {
   evt.target.classList.toggle("card__like-button_active");
 };
