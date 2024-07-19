@@ -1,30 +1,3 @@
-const previewModal = document.querySelector("#preview-modal");
-const imageElement = previewModal.querySelector(".card__image");
-const imageCaption = previewModal.querySelector(".card__title");
-
-function openModal(modal) {
-  modal.classList.add("modal_opened");
-  document.addEventListener("keydown", closeModalByPressingESC);
-}
-
-function closeModal(modal) {
-  modal.classList.remove("modal_opened");
-  document.removeEventListener("keydown", closeModalByPressingESC);
-}
-
-function closeModalByPressingESC(evt) {
-  if (evt.key === "Escape") {
-    const modal = document.querySelector(".modal_opened");
-    closeModal(modal);
-  }
-}
-
-function closeModalByOverlay(evt) {
-  if (evt.target.classList.contains("modal")) {
-    closeModal(evt.target);
-  }
-}
-
 class Card {
   constructor({ name, link }, cardSelector, handlePreviewPicture) {
     this._name = name;

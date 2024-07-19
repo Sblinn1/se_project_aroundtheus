@@ -108,17 +108,17 @@ const validationSettings = {
   errorClass: "modal__error_visible",
 };
 
-const editFormElement = profileEditModal.querySelector(".modal__form");
-const addFormElement = addCardModal.querySelector(".modal__form");
-
 const editFormvalidator = new FormValidator(
   validationSettings,
-  editFormElement
+  profileEditForm
 );
-const addFormvalidator = new FormValidator(validationSettings, addFormElement);
+const addFormvalidator = new FormValidator(
+  validationSettings,
+  addCardFormElement
+);
 
-addFormvalidator.enableValidation(validationSettings);
-editFormvalidator.enableValidation(validationSettings);
+addFormvalidator.enableValidation();
+editFormvalidator.enableValidation();
 
 const handleLikeIcon = (evt) => {
   evt.target.classList.toggle("card__like-button_active");
@@ -135,32 +135,11 @@ const handlePreviewPicture = (cardData) => {
   openModal(previewModal);
 };
 
-function getCardElement(cardData) {
-  const cardTemplate = document.querySelector("#card-template").content;
-  const cardElement = cardTemplate.cloneNode(true);
-  const cardImage = cardElement.querySelector(".card__image");
-  const cardTitle = cardElement.querySelector(".card__title");
-  const cardLikeButton = cardElement.querySelector(".card__like-button");
-  const cardDeleteButton = cardElement.querySelector(".card__delete-button");
-  const previewModalImage = previewModal.querySelector("#preview__image");
-  const previewModalTitle = previewModal.querySelector("#preview__title");
-
-  cardImage.src = cardData.link;
-  cardImage.alt = cardData.name;
-  cardTitle.textContent = cardData.name;
-
-  cardLikeButton.addEventListener("click", handleLikeIcon);
-  cardDeleteButton.addEventListener("click", handleDeleteCard);
-  cardImage.addEventListener("click", () => handlePreviewPicture(cardData));
-
-  return cardElement;
-}
-
 const renderCard = (cardData, cardListEl) => {
   const card = new Card(cardData, cardSelector, handlePreviewPicture);
-  const cardElement = getCardElement(cardData);
   cardListEl.prepend(card.getView());
 };
+
 // Event Handlers //
 
 function handleProfileEditSubmit(e) {
@@ -177,6 +156,7 @@ function handleAddCardFormSubmit(e) {
   renderCard({ name, link }, cardListEl);
   closeModal(addCardModal);
   e.target.reset();
+  addFormvalidator.resetButton();
 }
 
 // Event Listeners //
