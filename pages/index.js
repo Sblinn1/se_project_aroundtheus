@@ -135,10 +135,10 @@ const handlePreviewPicture = (cardData) => {
   openModal(previewModal);
 };
 
-const renderCard = (cardData, cardListEl) => {
+function renderCard(cardData, cardListEl) {
   const card = new Card(cardData, cardSelector, handlePreviewPicture);
   cardListEl.prepend(card.getView());
-};
+}
 
 // Event Handlers //
 
