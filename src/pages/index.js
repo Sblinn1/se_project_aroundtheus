@@ -7,11 +7,6 @@ import PopupWithForm from "../components/popupWithForm.js";
 import UserInfo from "../components/userinfo.js";
 import { initialCards, validationSettings } from "../utils/constants.js";
 
-const userInfoInstance = new UserInfo({
-  nameSelector: ".profile__title",
-  jobSelector: ".profile__description",
-});
-
 // Elements //
 const cardListEl = document.querySelector(".cards__list");
 const cardTemplate = document
@@ -51,6 +46,14 @@ const modals = [addCardModal, profileEditModal, previewModal];
 modals.forEach((modal) => {
   modal.addEventListener("click", closeModalByOverlay);
 });
+
+const addCardPopup = new PopupWithForm("#add-card-modal", () => {});
+newCardPopup.addEventListeners();
+
+// Create an instance
+//   pass it the selector for the popup in question
+//   for now, pass an empty function for second argument
+// call setEventListeners method
 
 // Functions //
 function closeModalByPressingESC(evt) {
@@ -105,8 +108,22 @@ const handlePreviewPicture = (cardData) => {
   openModal(previewModal);
 };
 
+const section = new Section(
+  {
+    items: initialCards,
+    renderer: (item) => {
+      renderCard(item, cardListEl);
+    },
+  },
+  ".cards__list"
+);
+
+section.renderItems();
+
 function renderCard(cardData, cardListEl) {
   const card = new Card(cardData, cardSelector, handlePreviewPicture);
+  // TODO - instead of prepending to cardListEl here
+  // you should call section class's addItem method
   cardListEl.prepend(card.getView());
 }
 
@@ -134,6 +151,7 @@ function handleAddCardFormSubmit(e) {
 profileEditButton.addEventListener("click", () => {
   profileTitleInput.value = profileTitle.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
+  // TODO - use open method of popup instance instead
   openModal(profileEditModal);
 });
 
@@ -141,6 +159,7 @@ addNewCardButton.addEventListener("click", () => {
   openModal(addCardModal);
 });
 
+// TODO - remove all close button listeners
 const closeButtons = document.querySelectorAll(".modal__close");
 closeButtons.forEach((button) => {
   const modal = button.closest(".modal");
@@ -150,4 +169,4 @@ closeButtons.forEach((button) => {
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 addCardFormElement.addEventListener("submit", handleAddCardFormSubmit);
 
-initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
+// initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
