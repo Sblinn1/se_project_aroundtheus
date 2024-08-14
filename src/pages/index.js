@@ -126,7 +126,7 @@ addCardPopup.setEventListeners();
 const profilePopup = new PopupWithForm("#profile-edit-modal", () => {});
 profilePopup.setEventListeners();
 
-const previewImagePopup = new PopupWithImage("#preview__image", () => {});
+const previewImagePopup = new PopupWithImage("#preview-modal", () => {});
 previewImagePopup.setEventListeners();
 
 const userInfoInstance = new UserInfo({
