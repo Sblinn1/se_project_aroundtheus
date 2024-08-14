@@ -47,9 +47,6 @@ modals.forEach((modal) => {
   modal.addEventListener("click", closeModalByOverlay);
 });
 
-const addCardPopup = new PopupWithForm("#add-card-modal", () => {});
-newCardPopup.addEventListeners();
-
 // Create an instance
 //   pass it the selector for the popup in question
 //   for now, pass an empty function for second argument
@@ -117,6 +114,25 @@ const section = new Section(
   },
   ".cards__list"
 );
+
+// Create an instance
+//   pass it the selector for the popup in question
+//   for now, pass an empty function for second argument
+// call setEventListeners method
+
+const addCardPopup = new PopupWithForm("#add-card-modal", () => {});
+addCardPopup.setEventListeners();
+
+const profilePopup = new PopupWithForm("#profile-edit-modal", () => {});
+profilePopup.setEventListeners();
+
+const previewImagePopup = new PopupWithImage("#preview__image", () => {});
+previewImagePopup.setEventListeners();
+
+const userInfoInstance = new UserInfo({
+  nameSelector: ".profile__title",
+  jobSelector: ".profile__description",
+});
 
 section.renderItems();
 
