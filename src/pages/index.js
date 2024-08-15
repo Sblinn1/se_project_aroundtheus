@@ -5,7 +5,11 @@ import Section from "../components/section.js";
 import PopupWithImage from "../components/popupWithImage.js";
 import PopupWithForm from "../components/popupWithForm.js";
 import UserInfo from "../components/userinfo.js";
-import { initialCards, validationSettings } from "../utils/constants.js";
+import {
+  initialCards,
+  validationSettings,
+  popupConfig,
+} from "../utils/constants.js";
 
 // Elements //
 const cardListEl = document.querySelector(".cards__list");
@@ -46,11 +50,6 @@ const modals = [addCardModal, profileEditModal, previewModal];
 modals.forEach((modal) => {
   modal.addEventListener("click", closeModalByOverlay);
 });
-
-// Create an instance
-//   pass it the selector for the popup in question
-//   for now, pass an empty function for second argument
-// call setEventListeners method
 
 // Functions //
 function closeModalByPressingESC(evt) {
@@ -105,7 +104,7 @@ const handlePreviewPicture = (cardData) => {
   openModal(previewModal);
 };
 
-const section = new Section(
+const cardList = new Section(
   {
     items: initialCards,
     renderer: (item) => {
@@ -114,14 +113,24 @@ const section = new Section(
   },
   ".cards__list"
 );
+cardList.renderItems();
 
 // Create an instance
 //   pass it the selector for the popup in question
 //   for now, pass an empty function for second argument
 // call setEventListeners method
+const addCardForm = document.querySelector("#add-card-form");
 
-const addCardPopup = new PopupWithForm("#add-card-modal", () => {});
+const addCardPopup = new PopupWithForm({
+  popupSelector: popupConfig.cardFormPopupSelector,
+  handleFormSubmit: (cardData) => {
+    cardList.addItem(renderCard(cardData));
+    addCardForm.reset();
+  },
+});
 addCardPopup.setEventListeners();
+
+// reset button and form validator
 
 const profilePopup = new PopupWithForm("#profile-edit-modal", () => {});
 profilePopup.setEventListeners();
@@ -133,8 +142,6 @@ const userInfoInstance = new UserInfo({
   nameSelector: ".profile__title",
   jobSelector: ".profile__description",
 });
-
-section.renderItems();
 
 function renderCard(cardData, cardListEl) {
   const card = new Card(cardData, cardSelector, handlePreviewPicture);
@@ -152,15 +159,15 @@ function handleProfileEditSubmit(e) {
   closeModal(profileEditModal);
 }
 
-function handleAddCardFormSubmit(e) {
-  e.preventDefault();
-  const name = cardTitleInput.value;
-  const link = cardUrlInput.value;
-  renderCard({ name, link }, cardListEl);
-  closeModal(addCardModal);
-  e.target.reset();
-  addFormvalidator.resetButton();
-}
+// function handleAddCardFormSubmit(e) {
+//   e.preventDefault();
+//   const name = cardTitleInput.value;
+//   const link = cardUrlInput.value;
+//   renderCard({ name, link }, cardListEl);
+//   closeModal(addCardModal);
+//   e.target.reset();
+//   addFormvalidator.resetButton();
+// }
 
 // Event Listeners //
 

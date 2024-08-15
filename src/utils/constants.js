@@ -32,3 +32,9 @@ export const validationSettings = {
   inputErrorClass: "modal__input_type_error",
   errorClass: "modal__error_visible",
 };
+
+export const popupConfig = {
+  addCardPopupSelector: "#add-card-modal",
+  profileEditSelector: "#profile-edit-modal",
+  previewImageSelector: "#preview-modal",
+};
