@@ -46,7 +46,6 @@ const previewImageCaption = previewModal.querySelector("#preview__title");
 
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
-  document.removeEventListener("keydown", closeModalByPressingESC);
 }
 
 const cardSelector = "#card-template";
