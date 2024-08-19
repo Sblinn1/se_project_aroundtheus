@@ -100,11 +100,6 @@ const handlePreviewPicture = (cardData) => {
   openModal(previewModal);
 };
 
-// Create an instance
-//   pass it the selector for the popup in question
-//   for now, pass an empty function for second argument
-// call setEventListeners method
-
 const section = new Section(
   {
     items: initialCards,
@@ -120,8 +115,6 @@ const addCardPopup = new PopupWithForm("#add-card-modal", (cardData) => {
   handleAddCardFormSubmit(cardData);
 });
 addCardPopup.setEventListeners();
-
-// reset button and form validator
 
 const profilePopup = new PopupWithForm("#profile-edit-modal", (cardData) => {
   userInfoInstance.setUserInfo(cardData);
@@ -151,6 +144,7 @@ function handleProfileEditSubmit(e) {
   profileTitle.textContent = profileTitleInput.value;
   profileDescription.textContent = profileDescriptionInput.value;
   closeModal(profileEditModal);
+  profileEditForm.reset();
 }
 
 function handleAddCardFormSubmit(e) {
@@ -158,7 +152,7 @@ function handleAddCardFormSubmit(e) {
   const link = cardUrlInput.value;
   renderCard({ name, link }, cardListEl);
   closeModal(addCardModal);
-  addFormvalidator.resetButton();
+  addCardFormElement.reset();
 }
 
 // Event Listeners //
@@ -174,14 +168,4 @@ addNewCardButton.addEventListener("click", () => {
   addCardPopup.open();
 });
 
-// TODO - remove all close button listeners
-const closeButtons = document.querySelectorAll(".modal__close");
-closeButtons.forEach((button) => {
-  const modal = button.closest(".modal");
-  button.addEventListener("click", () => closeModal(modal));
-});
-
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
-addCardFormElement.addEventListener("submit", handleAddCardFormSubmit);
-
-// initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
