@@ -42,29 +42,7 @@ const previewModalCloseButton = previewModal.querySelector(
 const previewImageElement = previewModal.querySelector("#preview__image");
 const previewImageCaption = previewModal.querySelector("#preview__title");
 
-const modals = [addCardModal, profileEditModal, previewModal];
-modals.forEach((modal) => {
-  modal.addEventListener("click", closeModalByOverlay);
-});
-
 // Functions //
-function closeModalByPressingESC(evt) {
-  if (evt.key === "Escape") {
-    const modal = document.querySelector(".modal_opened");
-    closeModal(modal);
-  }
-}
-
-function closeModalByOverlay(evt) {
-  if (evt.target.classList.contains("modal")) {
-    closeModal(evt.target);
-  }
-}
-
-function openModal(modal) {
-  modal.classList.add("modal_opened");
-  document.addEventListener("keydown", closeModalByPressingESC);
-}
 
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
@@ -84,14 +62,6 @@ const addFormvalidator = new FormValidator(
   addCardFormElement
 );
 addFormvalidator.enableValidation();
-
-const handleLikeIcon = (evt) => {
-  evt.target.classList.toggle("card__like-button_active");
-};
-
-const handleDeleteCard = (evt) => {
-  evt.target.closest(".card").remove();
-};
 
 const handlePreviewPicture = (cardData) => {
   previewImageElement.src = cardData.link;
@@ -122,7 +92,10 @@ const profilePopup = new PopupWithForm("#profile-edit-modal", (cardData) => {
 });
 profilePopup.setEventListeners();
 
-const previewImagePopup = new PopupWithImage("#preview-modal", () => {});
+const previewImagePopup = new PopupWithImage(
+  "#preview-modal",
+  (cardData) => {}
+);
 previewImagePopup.setEventListeners();
 
 const userInfoInstance = new UserInfo({
@@ -132,8 +105,6 @@ const userInfoInstance = new UserInfo({
 
 function renderCard(cardData, cardListEl) {
   const card = new Card(cardData, cardSelector, handlePreviewPicture);
-  // TODO - instead of prepending to cardListEl here
-  // you should call section class's addItem method
   cardListEl.prepend(card.getView());
 }
 
