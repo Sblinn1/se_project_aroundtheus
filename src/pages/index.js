@@ -154,12 +154,10 @@ function handleProfileEditSubmit(e) {
 }
 
 function handleAddCardFormSubmit(e) {
-  e.preventDefault();
   const name = cardTitleInput.value;
   const link = cardUrlInput.value;
   renderCard({ name, link }, cardListEl);
   closeModal(addCardModal);
-  e.target.reset();
   addFormvalidator.resetButton();
 }
 
