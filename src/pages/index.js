@@ -67,7 +67,7 @@ const handlePreviewPicture = (cardData) => {
   previewImageElement.src = cardData.link;
   previewImageElement.alt = `${cardData.name}`;
   previewImageCaption.textContent = cardData.name;
-  openModal(previewModal);
+  previewImagePopup.open(cardData.name, cardData.link);
 };
 
 const section = new Section(
