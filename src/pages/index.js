@@ -1,10 +1,10 @@
 import FormValidator from "../components/FormValidator.js";
 import Card from "../components/Card.js";
 import "../pages/index.css";
-import Section from "../components/section.js";
-import PopupWithImage from "../components/popupWithImage.js";
-import PopupWithForm from "../components/popupWithForm.js";
-import UserInfo from "../components/userinfo.js";
+import Section from "../components/Section.js";
+import PopupWithImage from "../components/PopupWithImage.js";
+import PopupWithForm from "../components/PopupWithForm.js";
+import UserInfo from "../components/Userinfo.js";
 import { initialCards, validationSettings } from "../utils/constants.js";
 
 // Elements //
@@ -61,9 +61,6 @@ const addFormvalidator = new FormValidator(
 addFormvalidator.enableValidation();
 
 const handlePreviewPicture = (cardData) => {
-  previewImageElement.src = cardData.link;
-  previewImageElement.alt = `${cardData.name}`;
-  previewImageCaption.textContent = cardData.name;
   previewImagePopup.open(cardData.name, cardData.link);
 };
 
@@ -78,15 +75,16 @@ const section = new Section(
 );
 section.renderItems();
 
-const addCardPopup = new PopupWithForm("#add-card-modal", (cardData) => {
-  handleAddCardFormSubmit(cardData);
-});
+const addCardPopup = new PopupWithForm(
+  "#add-card-modal",
+  handleAddCardFormSubmit
+);
 addCardPopup.setEventListeners();
 
-const profilePopup = new PopupWithForm("#profile-edit-modal", (cardData) => {
-  handleProfileEditSubmit(cardData);
-  profilePopup.close();
-});
+const profilePopup = new PopupWithForm(
+  "#profile-edit-modal",
+  handleProfileEditSubmit
+);
 profilePopup.setEventListeners();
 
 const previewImagePopup = new PopupWithImage(
@@ -102,7 +100,7 @@ const userInfoInstance = new UserInfo({
 
 function renderCard(cardData, cardListEl) {
   const card = new Card(cardData, cardSelector, handlePreviewPicture);
-  cardListEl.prepend(card.getView());
+  section.addItem(card.getView());
 }
 
 // Event Handlers //
@@ -111,7 +109,6 @@ function handleProfileEditSubmit() {
   profileTitle.textContent = profileTitleInput.value;
   profileDescription.textContent = profileDescriptionInput.value;
   profilePopup.close();
-  profileEditForm.reset();
 }
 
 function handleAddCardFormSubmit() {
@@ -120,6 +117,7 @@ function handleAddCardFormSubmit() {
   renderCard({ name, link }, cardListEl);
   addCardPopup.close();
   addCardFormElement.reset();
+  addFormvalidator.resetButton();
 }
 
 // Event Listeners //
