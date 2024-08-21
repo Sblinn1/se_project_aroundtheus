@@ -111,13 +111,14 @@ function handleProfileEditSubmit() {
   profilePopup.close();
 }
 
-function handleAddCardFormSubmit() {
-  const name = cardTitleInput.value;
-  const link = cardUrlInput.value;
+function handleAddCardFormSubmit(values) {
+  const name = values.title;
+  const link = values.url;
   renderCard({ name, link }, cardListEl);
   addCardPopup.close();
   addCardFormElement.reset();
   addFormvalidator.resetButton();
+  console.log(values);
 }
 
 // Event Listeners //
