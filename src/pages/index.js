@@ -105,10 +105,11 @@ function renderCard(cardData, cardListEl) {
 
 // Event Handlers //
 
-function handleProfileEditSubmit() {
-  profileTitle.textContent = profileTitleInput.value;
-  profileDescription.textContent = profileDescriptionInput.value;
+function handleProfileEditSubmit(UserInfo) {
+  profileTitle.textContent = UserInfo.name;
+  profileDescription.textContent = UserInfo.job;
   profilePopup.close();
+  profileEditForm.reset();
 }
 
 function handleAddCardFormSubmit(values) {
@@ -118,15 +119,14 @@ function handleAddCardFormSubmit(values) {
   addCardPopup.close();
   addCardFormElement.reset();
   addFormvalidator.resetButton();
-  console.log(values);
 }
 
 // Event Listeners //
 
 profileEditButton.addEventListener("click", () => {
-  const userInfo = userInfoInstance.getUserInfo();
-  profileTitleInput.value = userInfo.name;
-  profileDescriptionInput.value = userInfo.job;
+  const UserInfo = userInfoInstance.getUserInfo();
+  profileTitleInput.value = UserInfo.name;
+  profileDescriptionInput.value = UserInfo.job;
   profilePopup.open();
 });
 
