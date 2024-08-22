@@ -107,7 +107,7 @@ function renderCard(cardData, cardListEl) {
 
 function handleProfileEditSubmit(UserInfo) {
   profileTitle.textContent = UserInfo.name;
-  profileDescription.textContent = UserInfo.job;
+  profileDescription.textContent = UserInfo.description;
   profilePopup.close();
   profileEditForm.reset();
 }
