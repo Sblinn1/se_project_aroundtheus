@@ -107,8 +107,6 @@ function handleProfileEditSubmit(values) {
     title: values.name,
     description: values.description,
   });
-  profileTitle.textContent = values.name;
-  profileDescription.textContent = values.description;
   profilePopup.close();
 }
 
