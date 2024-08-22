@@ -87,10 +87,7 @@ const profilePopup = new PopupWithForm(
 );
 profilePopup.setEventListeners();
 
-const previewImagePopup = new PopupWithImage(
-  "#preview-modal",
-  (cardData) => {}
-);
+const previewImagePopup = new PopupWithImage("#preview-modal");
 previewImagePopup.setEventListeners();
 
 const userInfoInstance = new UserInfo({
@@ -98,18 +95,21 @@ const userInfoInstance = new UserInfo({
   jobSelector: ".profile__description",
 });
 
-function renderCard(cardData, cardListEl) {
+function renderCard(cardData) {
   const card = new Card(cardData, cardSelector, handlePreviewPicture);
   section.addItem(card.getView());
 }
 
 // Event Handlers //
 
-function handleProfileEditSubmit(UserInfo) {
-  profileTitle.textContent = UserInfo.name;
-  profileDescription.textContent = UserInfo.description;
+function handleProfileEditSubmit(values) {
+  userInfoInstance.setUserInfo({
+    title: values.name,
+    description: values.description,
+  });
+  profileTitle.textContent = values.name;
+  profileDescription.textContent = values.description;
   profilePopup.close();
-  profileEditForm.reset();
 }
 
 function handleAddCardFormSubmit(values) {
@@ -124,9 +124,9 @@ function handleAddCardFormSubmit(values) {
 // Event Listeners //
 
 profileEditButton.addEventListener("click", () => {
-  const UserInfo = userInfoInstance.getUserInfo();
-  profileTitleInput.value = UserInfo.name;
-  profileDescriptionInput.value = UserInfo.job;
+  const userData = userInfoInstance.getUserInfo();
+  profileTitleInput.value = userData.name;
+  profileDescriptionInput.value = userData.job;
   profilePopup.open();
 });
 
